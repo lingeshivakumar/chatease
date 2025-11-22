@@ -1,0 +1,6 @@
+transformers
+huggingface-hub
+accelerate
+torch
+flask
+flask-cors

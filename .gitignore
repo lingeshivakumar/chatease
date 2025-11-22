@@ -1,0 +1,15 @@
+# Node
+node_modules/
+dist/
+.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+
+# Huggingface model cache
+~/.cache/huggingface/

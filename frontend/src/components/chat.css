@@ -1,0 +1,201 @@
+/* GLOBAL */
+body {
+  margin: 0;
+  background: #141414;
+  font-family: system-ui, sans-serif;
+  color: white;
+
+  /* subtle texture */
+  background-image: radial-gradient(
+      rgba(255,255,255,0.04) 1px,
+      transparent 1px
+    );
+  background-size: 4px 4px;
+}
+
+/* PAGE LAYOUT */
+.grok-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------- HEADER ---------------- */
+.top-bar {
+  width: 100%;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.top-bar-inner {
+  width: 100%;
+  max-width: 1250px;    /* FIX: bring buttons slightly inward */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* Buttons */
+.auth-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-outline {
+  padding: 8px 20px;
+  border-radius: 20px;
+  background: transparent;
+  border: 1px solid #444;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-filled {
+  padding: 8px 20px;
+  border-radius: 20px;
+  background: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+/* ---------------- MAIN AREA ---------------- */
+.main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Center content before first message */
+.center-box {
+  margin-top: 110px;
+  text-align: center;
+}
+
+.center-title {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+/* Chat window */
+.chat-window {
+  width: 100%;
+  height: calc(100vh - 200px);
+  overflow-y: auto;
+
+  /* FIX: keep bubbles away from extreme edges */
+  padding: 20px 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Bubbles */
+.bubble {
+  max-width: 60%;
+  padding: 12px 18px;
+  border-radius: 16px;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.user-bubble {
+  background: #2979ff;
+  align-self: flex-end;
+  color: white;
+
+  /* FIX: pull bubble slightly left */
+  margin-right: 40px;
+}
+
+.bot-bubble {
+  background: #1f1f1f;
+  color: #e6e6e6;
+
+  /* FIX: push bubble slightly right */
+  margin-left: 40px;
+}
+
+/* Input bar */
+.input-area {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  width: 60%;
+  max-width: 650px;
+  transition: all 0.3s ease;
+}
+
+/* Center before messages */
+.input-area.center {
+  position: absolute;
+  top: 46%;
+  transform: translateY(-50%);
+}
+
+/* Bottom after messages */
+.input-area.bottom {
+  /* FIX: raise slightly */
+  margin-bottom: 40px;
+}
+
+/* Input field */
+.chat-input {
+  flex: 1;
+  padding: 14px 20px;
+  background: #1a1a1a;
+  border: 1px solid #444;
+  color: white;
+  border-radius: 25px;
+  font-size: 16px;
+
+  /* Always-on glow (white) */
+  box-shadow: 0 0 14px rgba(255,255,255,0.25);
+}
+
+.chat-input:focus {
+  outline: none;
+  border-color: #fff;
+  box-shadow: 0 0 20px rgba(255,255,255,0.45);
+}
+
+/* Send Button */
+.send-btn {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  background: white;
+  color: black;
+  font-size: 22px;
+  cursor: pointer;
+  border: none;
+
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.send-btn:hover {
+  transform: scale(1.07); /* grows smoothly */
+  box-shadow: 0 0 19px rgba(255, 255, 255, 0.45);
+}
+
+.contact-line {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #bfbfbf;
+  opacity: 0.9;
+  text-align: center;
+}
+
